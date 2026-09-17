@@ -1,0 +1,95 @@
+// Bootstrapt Override
+.dropdown-menu, .popover {
+    @include print-variable(dropdown-bg-opacity, $o-dropdown-bg-opacity);
+    @include print-variable(dropdown-bg-filter, $o-dropdown-bg-filter);
+    
+    @media (prefers-reduced-transparency: reduce) {
+        --dropdown-bg-opacity: 1;
+        --dropdown-bg-filter: unset;
+    }
+    backdrop-filter: var(--dropdown-bg-filter);
+}
+
+// 
+.o-dropdown {
+    &.btn-secondary,
+    &.btn-outline-secondary {
+        transition:
+            background-color .15s ease,
+            border-color .15s ease,
+            color .15s ease;
+    }
+}
+
+.o-dropdown,
+.o-dropdopwn-item,
+.o_menu_item {
+    &.o-dropdown-caret:not(.o-dropdown-no-caret) {
+        &:after {
+            font-size: 10px;
+            transition: transform .18s ease;
+        }
+    }
+}
+
+.o-dropdown--menu {
+    //box-shadow: $o-box-shadow-5;
+    .dropdown-toggle,
+    .dropdown-item {
+        border-radius: $border-radius-sm;
+        transition: background-color .12s ease, color .12s ease;
+        height: 48px;
+        align-content: center;
+    }
+
+    &.o-dropdown--menu-submenu {
+        --o-dropdown--submenu-margin: -7px;
+
+        margin-top: var(--o-dropdown--submenu-margin);
+        margin-bottom: var(--o-dropdown--submenu-margin);
+    }
+
+    // Not Used
+    .dropdown-item.o-dropdopwn-item-indent {
+        --#{$prefix}dropdown-item-padding-x: 15px;
+    }
+}
+
+// Still Not sure where this used
+.o-dropdown-item-unstyled-button {
+    &,
+    .o_web_client.o_touch_device & {
+        button,
+        button:hover,
+        button:disabled {
+            all: unset;
+
+            display: flex;
+            align-items: center;
+
+            width: 100%;
+            min-height: 40px;
+
+            cursor: pointer;
+        }
+    }
+}
+
+
+// ============================================================================
+// BOTTOM SHEET
+// ============================================================================
+
+.o_bottom_sheet .o_bottom_sheet_sheet {
+    background-color: $m3-surface-container-low;
+
+    .o_bottom_sheet_body {
+        @include print-variable(dropdown-bg, $m3-surface-container-low);
+        @include print-variable(dropdown-bg-filter, unset);
+        &.dropdown-menu {
+            border-radius: 0;
+        }
+    }
+
+}
+

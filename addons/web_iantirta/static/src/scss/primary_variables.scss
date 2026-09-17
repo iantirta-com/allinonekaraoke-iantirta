@@ -1,0 +1,337 @@
+//////////////////////
+// Config
+//////////////////////
+$o-frontend-min-contrast-ratio: 2.9 !default;
+$o-webclient-media: screen !default;
+$o-webclient-color-scheme: bright !default;
+
+
+//////////////////////
+// Opacity Helper
+//////////////////////
+$o-opacity-disabled:                        .5 !default;
+$o-opacity-muted:                           .76 !default;
+
+$o-opacities: (
+    0: 0,
+    25: .25,
+    50: .5,
+    75: .75,
+    100: 1,
+    disabled: $o-opacity-disabled,
+    muted: $o-opacity-muted,
+) !default;
+
+
+//////////////////////
+// Default Color Helper
+//////////////////////
+/// DATA:
+///     - gray 100 == surface container
+///     - gray 300 == outline variant
+///     - gray 400 == secondary container
+///     - gray 700 == $m3-onsurface-var
+///     - gray 900 == onsurface
+$o-white:                                   #FFFFFF !default;
+$o-black:                                   #000000 !default;
+
+$o-gray-100: $m3-surface-container !default;        // 18.06
+$o-gray-200: $m3-surface-var !default;              // 16.29
+$o-gray-300: $m3-outline-var !default;              // 12.36
+$o-gray-400: $m3-secondary-container !default;      // 16.29
+$o-gray-500: #adb5bd !default;
+$o-gray-600: #6c757d !default;
+$o-gray-700: $m3-onsurface-var !default;            // 2.23
+$o-gray-800: #343a40 !default;
+$o-gray-900: $m3-onsurface !default;                // 1.22
+
+$o-grays: (
+    100: $o-gray-100,
+    200: $o-gray-200,
+    300: $o-gray-300,
+    400: $o-gray-400,
+    500: $o-gray-500,
+    600: $o-gray-600,
+    700: $o-gray-700,
+    800: $o-gray-800,
+    900: $o-gray-900,
+) !default;
+
+$o-community-color:                         $m3-primary !default;
+$o-enterprise-color:                        $m3-primary !default;
+$o-enterprise-action-color:                 $m3-tertiary !default;
+
+$o-brand-sigil:                             $o-community-color !default;
+$o-brand-primary:                           $o-community-color !default;
+
+$o-brand-secondary: #8f8f8f !default;
+$o-brand-lightsecondary:                    $m3-surface-container !default;
+
+$o-action:                                  $o-brand-primary !default;
+$o-success:                                 #7dffbc !default;
+$o-info:                                    #7eb8ff !default;
+$o-warning:                                 #ffe57e !default;
+$o-danger:                                  $m3-error !default;
+
+$o-theme-text-colors: (
+    "success": #008818,
+    "info": #0180a5,
+    "warning": #9a6b01,
+    "danger": $m3-error,
+)!default;
+
+$o-main-text-color:                         $m3-onsurface !default;
+$o-main-color-muted:                        rgba($m3-onsurface-var, $o-opacity-muted) !default;
+$o-main-headings-color: $o-black !default;
+$o-main-link-color:                         darken($o-brand-primary, 5%) !default;
+$o-main-favorite-color: #f3cc00 !default;
+$o-main-code-color:                         #d2317b !default;
+
+$o-view-background-color: $m3-surface-container-lowest !default;
+$o-shadow-color: $m3-shadow !default; // def: #303030
+
+$o-text-colors-custom: (
+    "action": $o-action,
+    "favourite": $o-main-favorite-color,
+) !default;
+
+$o-bg-colors-custom: (
+    "action": $o-action,
+    "view": $o-view-background-color,
+    "favourite": $o-main-favorite-color,
+) !default;
+
+$o-btn-custom: (
+    "favourite": $o-main-favorite-color,
+) !default;
+
+
+//////////////////////
+// Fonts
+//////////////////////
+$o-root-font-size:                           1rem !default;
+
+$o-font-size-base:                           o-to-rem(14px) !default;
+$o-font-size-base-touch: o-to-rem(16px) !default;
+$o-font-size-base-small:                     o-to-rem(12px) !default;
+$o-font-size-base-smaller:                   o-to-rem(11px) !default;
+// body, 1, 0.875, 0.75 (l, m, sm)
+// head, 2, 1.75, 1.5
+// label (fw-medium), 0.875, 0.75, 0.6875
+// title, 1.375, 1, 0.875
+
+$o-font-weight-normal:                       400 !default;
+$o-font-weight-medium:                       500 !default;
+$o-font-weight-bold:                         700 !default;
+
+$o-line-height-base: 1.5 !default; // This is BS default
+$o-line-height-sm : 1.25 !default;
+$o-line-height-lg : 2 !default;
+// body, 1.5, 1.25, 1 (l, m, sm)
+// head, 2.5, 2.25, 2
+// label, 1.25, 1, 1
+// title, 1.75(reg), 1.5, 1.25
+
+$o-system-fonts: (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Ubuntu, "Noto Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji") !default;
+
+$o-font-family-sans-serif: o-add-unicode-support-font($o-system-fonts) !default;
+$o-font-family-monospace: o-add-unicode-support-font((SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace)) !default;
+
+$o-headings-font-family: o-add-unicode-support-font(("SF Pro Display", $o-system-fonts)) !default;
+
+//////////////////////
+// Border
+//////////////////////
+$o-box-shadow-1:                            0px 1px 2px 0px rgba($m3-shadow, .3),
+                                            0px 1px 3px 1px rgba($m3-shadow, .15) !default;
+$o-box-shadow-2:                            0px 1px 2px 0px rgba($m3-shadow, .3),
+                                            0px 2px 6px 2px rgba($m3-shadow, .15) !default;
+$o-box-shadow-3:                            0px 1px 3px 0px rgba($m3-shadow, .3),
+                                            0px 4px 8px 3px rgba($m3-shadow, .15) !default;
+$o-box-shadow-4:                            0px 2px 3px 0px rgba($m3-shadow, .3),
+                                            0px 6px 10px 4px rgba($m3-shadow, .15) !default;
+$o-box-shadow-5:                            0px 4px 4px 0px rgba($m3-shadow, .3),
+                                            0px 6px 10px 4px rgba($m3-shadow, .15) !default;
+    
+//////////////////////
+// Border
+//////////////////////
+$o-border-radius:                           o-to-rem(12px) !default;
+$o-border-radius-sm:                        o-to-rem(9px) !default;
+$o-border-radius-lg:                        o-to-rem(16px) !default;
+$o-border-radius-xxl:                       o-to-rem(28px) !default;
+
+//////////////////////
+// Spacer
+//////////////////////
+$o-spacer: 24px !default; // = 1.5rem
+$o-horizontal-padding: $o-spacer !default;
+
+
+//////////////////////
+// Component
+//////////////////////
+$o-component-active-color:  $o-black !default;
+$o-component-active-bg: mix($o-action, $m3-surface-container, 20%) !default;
+$o-component-active-border: $o-action !default;
+
+
+//////////////////////
+// Modal
+//////////////////////
+$o-modal-lg:                                880px !default;
+$o-modal-md:                                560px !default;
+
+
+//////////////////////
+// Table
+//////////////////////
+$o-table-cell-padding-x-sm: .3rem !default;
+$o-table-cell-padding-y-sm: .5rem !default;
+
+
+//////////////////////
+// Sheet
+//////////////////////
+$o-sheet-cancel-tpadding: 0px !default;
+
+$o-statusbar-height: 33px !default;
+
+$o-statbutton-height: 44px !default;
+$o-statbutton-spacing: 6px !default;
+
+
+//////////////////////
+// Form
+//////////////////////
+$o-form-lightsecondary: #ccc !default;
+
+$o-form-spacing-unit: 5px !default;
+
+$o-input-padding-y: 0px !default; // 2px
+$o-input-padding-x: 12px !default; // 4px
+
+$o-input-bg: $m3-surface !default;
+$o-input-invalid-bg: mix($o-danger, $o-input-bg, 10%) !default;
+$o-input-border-required: $m3-outline-var !default; // $o-brand-primary
+
+$o-label-font-size-factor: 0.8 !default;
+
+
+//////////////////////
+// List
+//////////////////////
+$o-list-group-active-color: $o-black !default;
+$o-list-group-active-bg: lighten(saturate(adjust-hue($o-info, 15), 1.8), 50) !default;
+
+$o-list-footer-bg-color: transparent !default;
+$o-list-footer-font-weight: bold !default;
+
+
+//////////////////////
+// Dropdown
+//////////////////////
+$o-dropdown-hpadding: 12px !default;
+$o-dropdown-vpadding: 8px !default;
+$o-dropdown-max-height: 70vh !default;
+
+$o-dropdown-bg-opacity: .55 !default;
+$o-dropdown-bg: $m3-surface-container-lowest !default;
+$o-dropdown-bg-filter: saturate(220%) blur(16px) !default;
+
+//////////////////////
+// Breadcrumb
+//////////////////////
+$o-breadcrumb-item-padding-x: .5rem !default;
+
+
+//////////////////////
+// Badge
+//////////////////////
+$o-badge-min-width: 3ch !default;
+
+
+//////////////////////
+// Card
+//////////////////////
+$o-card-body-bg-opacity: 0.9 !default;
+
+
+//////////////////////
+// Mobile
+//////////////////////
+$o-base-settings-mobile-tabs-height: 40px !default;
+
+$o-touch-btn-padding: 7px 14px !default;
+$o-touch-btn-with-icon-padding: 7px 10px !default;
+
+
+//////////////////////
+// Easing
+//////////////////////
+$o-easing-enter: cubic-bezier(0.05, 0.7, 0.1, 1.0) !default;
+$o-easing-exit: cubic-bezier(0.3, 0.0, 0.8, 0.15) !default;
+
+
+//////////////////////
+// Button
+//////////////////////
+$o-btns-bs-override: () !default;
+$o-btns-bs-override: map-merge((
+    "primary": (
+        background:         $m3-primary,
+        border:             $m3-primary,
+        color:              $m3-onprimary,
+
+        hover-background:   darken($m3-primary, 3%),
+        hover-border:       darken($m3-primary, 3%),
+        hover-color:        $m3-onprimary,
+
+        active-background:  darken($m3-primary, 10%),
+        active-border:      darken($m3-primary, 10%),
+        active-color:       $m3-onprimary,
+    ),
+    "secondary": (
+        background: $m3-secondary-container,
+        border: $m3-secondary-container,
+        color: $m3-onsecondary-container,
+
+        hover-background:   darken($m3-secondary-container, 3%),
+        hover-border:       darken($m3-secondary-container, 3%),
+        hover-color:        $m3-onsecondary-container,
+
+        active-background: $o-component-active-bg,
+        active-border:  $o-component-active-border,
+        active-color: $o-component-active-color,
+    ),
+    "light": (
+        background:         $o-white,
+        border:             $o-white,
+        color:              $m3-onsurface,
+
+        hover-background:   $m3-surface-var,
+        hover-border:       $m3-surface-var,
+        hover-color:        $m3-onsurface,
+
+        active-background:  $o-component-active-bg,
+        active-border:      $o-component-active-border,
+        active-color:       $o-component-active-color,
+    ),
+), $o-btns-bs-override);
+
+$o-btns-bs-outline-override: () !default;
+$o-btns-bs-outline-override: map-merge((
+    "secondary": (
+        background:         transparent,
+        border:             $m3-secondary-container,
+        color:              $m3-onsecondary-container,
+
+        hover-background:   darken($m3-secondary-container, 3%),
+        hover-border:       darken($m3-secondary-container, 3%),
+        hover-color:        $m3-onsecondary-container,
+
+        active-background:  $o-component-active-bg,
+        active-border:      $o-component-active-border,
+        active-color:       $o-component-active-color,
+    ),
+), $o-btns-bs-outline-override);

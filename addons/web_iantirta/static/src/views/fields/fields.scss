@@ -1,0 +1,41 @@
+
+:root {
+    @include print-variable(o-input-border-color, $m3-outline-var);
+    //@include print-variable(o-caret-color, $input-color);
+}
+
+.o_input {
+    border-width: $input-border-width;
+    border-radius: $input-border-radius;
+    height: 42px;
+    transition:
+        border-color 140ms ease,
+        background-color 140ms ease,
+        box-shadow 140ms ease;
+
+    &::placeholder {
+        color: $m3-onsurface-var;
+        opacity: .7;
+    }
+}
+
+.o_field_widget {
+    .o_row_handle {
+        color: $m3-onsurface-var;
+        &:hover {
+            color: $m3-onsurface;
+        }
+    }
+    &.o_field_html {
+        background-color: $input-bg;
+        border-radius: $input-border-radius;
+
+        .note-editable {
+            border-radius: $input-border-radius;
+        }
+    }
+}
+
+select {
+    background-position-x: right 8px;
+}
