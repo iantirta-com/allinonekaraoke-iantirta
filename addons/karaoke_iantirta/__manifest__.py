@@ -5,11 +5,14 @@
 Long description of module's purpose
     """,
     'author': "iantirta.com",
-    'website': "https://www.iantirta.com.com",
+    'website': "https://www.iantirta.com",
     'category': 'Hidden',
     'version': '0.1',
     "license": "Other OSI approved licence",
     'depends': ['web_iantirta'],
+    "external_dependencies": {
+        "python": ["kplus",],
+    },
     'data': [
         'security/ir.model.access.csv',
         
@@ -17,6 +20,7 @@ Long description of module's purpose
         
         'views/webclient_templates.xml',
         "views/karaoke_menu_views.xml",
+        "views/gpu_worker_menu_views.xml",
     ],
     "assets": {
         'web.assets_frontend': [
