@@ -1,15 +1,12 @@
 import kplus
-import kplus.init
-
-from kplus.pipelines.download import Downloader
+from kplus.pipelines import (
+    extract_info,
+    extract_lyrics,
+)
 from kplus.worker.gpu_worker import KaggleWorker
 
-def extract_info(url: str, **kwargs) -> tuple[str, str, float]:
-    default_kwargs = {
-        "cookiefile": None
-    }
-    default_kwargs.update(kwargs)
-    return Downloader(**default_kwargs)._extract_info(url)
-
-def extract_lyrics(title: str, artist: str, duration: float) -> str:
-    return Downloader().get_lyrics(title, artist, duration)
+if __name__ == "__main__":
+    print("Test Kplus")
+    from kplus.tools import rich
+    rich.print("rich Ok")
+    rich.inspect(kplus.worker.gpu_worker.KaggleWorker, methods=True)

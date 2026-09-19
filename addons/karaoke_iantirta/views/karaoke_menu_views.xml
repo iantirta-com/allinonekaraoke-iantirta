@@ -11,6 +11,7 @@
                     <button string="Run" type="object" name="action_run" />
                 </header>
                 <sheet>
+                    <field name="thumbnail_url" widget="image_url"/>
                     <field name="status"/>
                     <group string="Source">
                         <group colspan="2">
